@@ -47,6 +47,7 @@
                         <th class="text-center">Nama</th>
                         <th class="text-center">No Telepon</th>
                         <th class="text-center">Alamat</th>
+                        <th class="text-center">Pengurus</th>
                         <th class="text-center">Aksi</th>
                     </tr>
                 </thead>
@@ -61,6 +62,7 @@
                             <td class="text-center">{{$data->nama_anggota}}</td>
                             <td class="text-center">{{$data->no_telepon}}</td>
                             <td class="text-center">{{$data->alamat}}</td>
+                            <td class="text-center">{{$data->supplier->nama_supplier}}</td>
                         <td class="text-center">
                             <form class="text-center" action="{{route('jenis.destroy',$data->id)}}" method="post">
                                 @method('delete')

@@ -44,6 +44,7 @@
                         <th class="text-center">Nama</th>
                         <th class="text-center">Email</th>
                         <th class="text-center">Role</th>
+                        <th class="text-center">password</th>
                         <th class="text-center">Aksi</th>
                     </tr>
                 </thead>
@@ -56,10 +57,11 @@
                         <td class="text-center">{{$no++}}</td>
                         <td class="">{{$data->name}}</td>
                         <td class="">{{$data->email}}</td>
-
+                        
                         @foreach ($data->roles as $role)
-                            <td>{{$role->name}}</td>
+                        <td>{{$role->name}}</td>
                         @endforeach
+                        <td class="">{{$data->password}}</td>
                         <td class="text-center">
                             <a href="{{ route('user-management.edit', $data->id) }}" class="btn btn-warning"><span class="fa fa-edit"></span></a>
                         </td>
@@ -69,10 +71,11 @@
                         <td class="text-center">{{$no++}}</td>
                         <td class="">{{$data->name}}</td>
                         <td class="">{{$data->email}}</td>
-
+                        
                         @foreach ($data->roles as $role)
-                            <td>{{$role->name}}</td>
+                        <td>{{$role->name}}</td>
                         @endforeach
+                        <td class="">{{$data->password}}</td>
                         <td>
                             <form class="text-center" action="{{route('user-management.destroy',$data->id)}}" method="post">
                                 @method('delete')

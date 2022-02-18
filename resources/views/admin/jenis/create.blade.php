@@ -45,6 +45,16 @@
                     <textarea name="alamat" class="form-control" rows="5" placeholder="Alamat"></textarea>
                 </div>
                 <div class="form-group">
+                    <label>Pengurus</label>
+                    <select name="pengurus_id" class="form-control">
+
+                            @foreach($supplier as $data)
+                                <option value="{{$data->id}}">{{$data->nama_supplier}}</option>
+                            @endforeach
+
+                    </select>
+                </div>
+                <div class="form-group">
                     <button class="btn btn-primary" type="submit">Simpan</button>
                     <button class="btn btn-default" type="reset">Batal</button>
                 </div>

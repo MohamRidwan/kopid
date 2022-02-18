@@ -19,11 +19,11 @@ class CreateJenisTable extends Migration
             $table->string('id_card');
             $table->string('no_telepon');
             $table->text('alamat');
-            // $table->biginteger('pengurus_id')->unsigned();
-            //         //foreign
-            //         $table->foreign('pengurus_id')
-            //         ->references('id')
-            //         ->on('suppliers');
+            $table->biginteger('pengurus_id')->unsigned();
+                    //foreign
+                    $table->foreign('pengurus_id')
+                    ->references('id')
+                    ->on('suppliers');
             $table->timestamps();
         });
     }

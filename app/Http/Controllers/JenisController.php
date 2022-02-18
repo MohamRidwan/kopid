@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Alert;
 use App\Models\Jenis;
+use App\Models\Supplier;
 use Illuminate\Http\Request;
 use Session;
 
@@ -28,7 +29,8 @@ class JenisController extends Controller
     public function create()
     {
         $id_card = Jenis::id_card();
-        return view('admin.jenis.create',compact('id_card')) ;
+        $supplier = Supplier::all();
+        return view('admin.jenis.create',compact('id_card','supplier')) ;
     }
 
     /**
@@ -43,12 +45,14 @@ class JenisController extends Controller
             'nama_anggota' => 'required',
             'no_telepon' => 'required',
             'alamat' => 'required',
+            'pengurus_id' => 'required',
         ]);
         $jenis = new Jenis;
         $jenis->id_card = $request->id_card;
         $jenis->nama_anggota = $request->nama_anggota;
         $jenis->no_telepon = $request->no_telepon;
         $jenis->alamat = $request->alamat;
+        $jenis->pengurus_id = $request->pengurus_id;
         $jenis->save();
 
        

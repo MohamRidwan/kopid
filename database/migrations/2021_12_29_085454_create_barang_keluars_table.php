@@ -15,19 +15,19 @@ class CreateBarangKeluarsTable extends Migration
     {
         Schema::create('barang_keluars', function (Blueprint $table) {
             $table->id();
-            $table->string('kode_barang_keluar');
-            $table->date('tanggal_keluar');
-            $table->biginteger('barang_id')->unsigned();
-                    //foreign
-                    $table->foreign('barang_id')
-                    ->references('id')
-                    ->on('barangs');
-            $table->integer('qty');
-            $table->biginteger('user_id')->unsigned();
-                    //foreign
-                    $table->foreign('user_id')
-                    ->references('id')
-                    ->on('users');
+            // $table->string('kode_barang_keluar');
+            // $table->date('tanggal_keluar');
+            // $table->biginteger('barang_id')->unsigned();
+            //         //foreign
+            //         $table->foreign('barang_id')
+            //         ->references('id')
+            //         ->on('barangs');
+            // $table->integer('qty');
+            // $table->biginteger('user_id')->unsigned();
+            //         //foreign
+            //         $table->foreign('user_id')
+            //         ->references('id')
+            //         ->on('users');
             $table->timestamps();
         });
     }

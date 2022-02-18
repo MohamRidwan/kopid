@@ -11,13 +11,16 @@ class Jenis extends Model
 {
     use HasFactory;
     // memberikan akses data apa saja yang bisa dilihat
-    protected $visible = ['nama_anggota', 'id_card' , 'no_telepon', 'alamat'];
+    protected $visible = ['nama_anggota', 'id_card' , 'no_telepon', 'alamat','pengurus_id'];
     //memberikan akses data apa saja yang bisa di isi
-    protected $fillable = ['nama_anggota', 'id_card', 'no_telepon', 'alamat'];
+    protected $fillable = ['nama_anggota', 'id_card', 'no_telepon', 'alamat','pengurus_id'];
     //mencatat waktu pembuatan dan update data otomatis
     public $timestamps = true;
 
-    
+    public function supplier()
+    {
+        return $this->belongsTo(Supplier::class, 'pengurus_id');
+    }
 
     public static function id_card()
     {
