@@ -45,6 +45,7 @@
                         <th class="text-center">No</th>
                         <th class="text-center">Kode Barang Keluar</th>
                         <th class="text-center">Tanggal Keluar</th>
+                        <th class="text-center">Nama </th>
                         <th class="text-center">Nama Barang</th>
                         <th class="text-center" >Jumlah Keluar</th>
                         <th class="text-center">User</th>
@@ -60,6 +61,7 @@
                         <td class="text-center">{{$no++}}</td>
                         <td class="text-center">{{$data->kode_barang_keluar}}</td>
                         <td class="text-center">{{$data->tanggal_keluar}}</td>
+                        <td class="text-center">{{$data->supplier->nama_supplier}}</td>
                         <td class="text-center">{{$data->barang->nama_barang}}</td>
                         <td class="text-center">{{$data->qty}}</td>
                         <td class="text-center">{{$data->user->name}}</td>

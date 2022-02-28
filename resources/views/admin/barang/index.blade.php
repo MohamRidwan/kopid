@@ -43,11 +43,11 @@
                 <thead>
                     <tr>
                         <th class="text-center">No</th>
-                        <th class="text-center">Kode Barang</th>
+                        <!-- <th class="text-center">Kode Barang</th> -->
                         <th class="text-center">Nama Barang</th>
-                        <th class="text-center">Jenis Barang</th>
+                        <!-- <th class="text-center">Jenis Barang</th> -->
                         <th class="text-center">Stok</th>
-                        <th class="text-center">Satuan</th>
+                        <!-- <th class="text-center">Satuan</th> -->
                         <th class="text-center">Aksi</th>
                     </tr>
                 </thead>
@@ -58,11 +58,11 @@
                     @foreach ($barang as $data)
                     <tr>
                         <td class="text-center">{{$no++}}</td>
-                        <td class="text-center">{{$data->kode_barang}}</td>
+                       
                         <td class="text-center">{{$data->nama_barang}}</td>
-                        <td class="text-center">{{$data->jenis->nama_jenis}}</td>
+                       
                         <td class="text-center">{{$data->stok}}</td>
-                        <td class="text-center">{{$data->satuan->nama_satuan}}</td>
+                     
                         <td class="text-center">
                             <form class="text-center" action="{{route('barang.destroy',$data->id)}}" method="post">
                                 @method('delete')

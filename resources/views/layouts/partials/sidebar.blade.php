@@ -19,7 +19,11 @@
         <li class="{{ Request::is('home')? "active":"" }}"><a href="/home"><em class="fa fa-dashboard color-blue" >&nbsp;</em><b> Dashboard</b></a></li>
         <li class="{{ Request::is('supplier')? "active":"" }}"><a href="/pengadaanbarang/supplier"><em class="fa fa-users color-blue">&nbsp;</em><b> Pengurus </b></a></li>
         <li class="{{ Request::is('jenis')? "active":"" }}"><a href="/pengadaanbarang/jenis"><em class="fa fa-users color-blue">&nbsp;</em> <b> Anggota </b>
+        <li class="{{ Request::is('jenis')? "active":"" }}"><a href="/pengadaanbarang/barang"><em class="fa fa-archive color-blue">&nbsp;</em> <b> Barang </b>
+        <!-- <li class="{{ Request::is('barang')? "active":"" }}"><a href="/pengadaanbarang/barang">
+            <span class="fa fa-angle-right">&nbsp;</span> Nama Barang
         </a></li>
+        </a></li> -->
         <!-- <li class="parent "><a data-toggle="collapse" href="#sub-item-1">
             <em class="fa fa-archive color-blue">&nbsp;</em><b> Barang </b><span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus color-blue"></em></span>
             </a>
@@ -27,14 +31,11 @@
                 <li class="{{ Request::is('satuan')? "active":"" }}"><a href="/pengadaanbarang/satuan">
                     <span class="fa fa-angle-right">&nbsp;</span> Satuan Barang
                 </a></li>
-                <li class="{{ Request::is('barang')? "active":"" }}"><a href="/pengadaanbarang/barang">
-                    <span class="fa fa-angle-right">&nbsp;</span> Nama Barang
-                </a></li>
             </ul>
-        </li>
+        </li> -->
         <li class="{{ Request::is('barang-masuk')? "active":"" }}"><a href="/pengadaanbarang/barang-masuk" ><em class="fa fa-download color-blue">&nbsp;</em> <b> Barang Masuk </b></a></li>
         <li  class="{{ Request::is('barang-keluar')? "active":"" }}"><a href="/pengadaanbarang/barang-keluar"><em class="fa fa-upload color-blue">&nbsp;</em> <b> Barang Keluar </b></a></li>
-        <li  class="{{ Request::is('transaksi')? "active":"" }}"><a href="/pengadaanbarang/transaksi"><em > <i class="fa- fa-docm"></i> &nbsp;</em> <b> Laporan </b></a></li>
+        <!-- <li  class="{{ Request::is('transaksi')? "active":"" }}"><a href="/pengadaanbarang/transaksi"><em > <i class="fa- fa-docm"></i> &nbsp;</em> <b> Laporan </b></a></li>
         <li  class="{{ Request::is('cetak-laporan')? "active":"" }}"><a href="/pengadaanbarang/cetak-laporan"><em class="fa fa-print color-blue">&nbsp;</em> <b> Cetak Laporan </b></a></li> -->
         @role('admin')
         <li  class="{{ Request::is('user-management')? "active":"" }}"><a href="/pengadaanbarang/user-management"><em class="fa fa-user color-blue">&nbsp;</em> <b> User Management </b></a></li>

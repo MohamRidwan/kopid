@@ -13,10 +13,15 @@ class BarangKeluar extends Model
     [
         'kode_barang_keluar',
         'tanggal_keluar',
+        'supplier_id',
         'barang_id',
         'qty',
         'user_id',
     ];
+    public function supplier()
+    {
+        return $this->belongsTo(Supplier::class, 'supplier_id');
+    }
     public function barang()
     {
         return $this->belongsTo(Barang::class, 'barang_id');

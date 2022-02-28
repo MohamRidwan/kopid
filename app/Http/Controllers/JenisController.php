@@ -79,8 +79,9 @@ class JenisController extends Controller
      */
     public function edit($id)
     {
+        $id_card = Jenis::id_card();
         $jenis = Jenis::findOrFail($id);
-        return view('admin.jenis.edit', compact('jenis'));
+        return view('admin.jenis.edit', compact('jenis','id_card'));
     }
 
     /**
@@ -93,18 +94,20 @@ class JenisController extends Controller
     public function update(Request $request, $id)
     {
         $validated = $request->validate([
-            'nama_jenis' => 'required',
+            'nama_anggota' => 'required',
+            'no_telepon' => 'required',
+            'alamat' => 'required',
         ]);
 
         $jenis = Jenis::findOrFail($id);
-        $jenis->nama_jenis = $request->nama_jenis;
+        $jenis->id_card = $request->id_card;
+        $jenis->nama_anggota = $request->nama_anggota;
+        $jenis->no_telepon = $request->no_telepon;
+        $jenis->alamat = $request->alamat;
         $jenis->save();
 
-        Session::flash("flash_notification", [
-            "level" => "success",
-            "message" => "Berhasil mengedit Jenis $jenis->nama_jenis"
-        ]);
-        Alert::success('Tersimpan', 'Data Jenis Barang Masuk Berhasil Di Edit');
+      
+        Alert::success('Berhasil', 'Data Anggota Berhasil Di Edit');
         return redirect()->route('jenis.index');
     }
 

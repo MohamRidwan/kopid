@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Alert;
 use App\Models\BarangKeluar;
 use App\Models\Barang;
+use App\Models\Supplier;
 use App\Models\User;
 use App\Models\Transaksi;
 use Illuminate\Http\Request;
@@ -39,8 +40,9 @@ class BarangKeluarController extends Controller
     {
         $kode = BarangKeluar::kode();
         $barang = Barang::all();
+        $supplier = Supplier::all();
         $user = User::all();
-        return view('admin.barang-keluar.create', compact('kode','barang','user'));
+        return view('admin.barang-keluar.create', compact('kode','barang','supplier','user'));
     }
 
     /**
@@ -54,8 +56,9 @@ class BarangKeluarController extends Controller
         $validated = $request->validate([
             'tanggal_keluar' => 'required',
             'barang_id' => 'required',
+            'supplier_id' => 'required',
             'qty' => 'required',
-            'user_id' => 'required',
+            
         ]);
 
         $barang = Barang::findOrFail($request->barang_id);
@@ -77,6 +80,7 @@ class BarangKeluarController extends Controller
             $keluar = new BarangKeluar();
             $keluar->kode_barang_keluar = $request->kode_barang_keluar;
             $keluar->tanggal_keluar = $request->tanggal_keluar;
+            $masuk->supplier_id = $request->supplier_id;
             $keluar->barang_id = $request->barang_id;
             $keluar->qty = $request->qty;
             $keluar->user_id = $request->user_id;

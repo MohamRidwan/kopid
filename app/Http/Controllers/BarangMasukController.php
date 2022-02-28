@@ -60,6 +60,8 @@ class BarangMasukController extends Controller
         $masuk->supplier_id = $request->supplier_id;
         $masuk->barang_id = $request->barang_id;
         $masuk->qty = $request->qty;
+        $barang->stok += $request->qty;
+        $barang->save();
         $masuk->user_id = $request->user_id;
         $masuk->save();
         }
@@ -72,8 +74,7 @@ class BarangMasukController extends Controller
         }
 
         $barang = Barang::where('id', $masuk->barang_id)->first();
-        $barang->stok += $request->qty;
-        $barang->save();
+        
 
         $transaksi = new Transaksi();
         $transaksi->jenis = 'Barang Masuk';

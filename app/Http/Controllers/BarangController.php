@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Alert;
 use App\Models\Barang;
 use App\Models\Satuan;
-use App\Models\Jenis;
 use Illuminate\Http\Request;
 use Session;
 
@@ -29,10 +28,8 @@ class BarangController extends Controller
      */
     public function create()
     {
-        $kode = Barang::kode();
-        $jenis = Jenis::all();
-        $satuan = Satuan::all();
-        return view('admin.barang.create', compact('kode','jenis','satuan'));
+      
+        return view('admin.barang.create');
     }
 
     /**
@@ -45,14 +42,11 @@ class BarangController extends Controller
     {
         $validated = $request->validate([
             'nama_barang' => 'required',
-            'jenis_id' => 'required',
-            'satuan_id' => 'required',
+            // 'jenis_id' => 'required',
+            // 'satuan_id' => 'required',
         ]);
         $barang = new Barang();
-        $barang->kode_barang = $request->kode_barang;
         $barang->nama_barang = $request->nama_barang;
-        $barang->jenis_id = $request->jenis_id;
-        $barang->satuan_id = $request->satuan_id;
         $barang->save();
 
        

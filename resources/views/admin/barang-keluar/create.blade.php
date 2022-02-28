@@ -36,6 +36,16 @@
                     <input type="date" name="tanggal_keluar" class="form-control">
                 </div>
                 <div class="form-group">
+                    <label>Supplier</label>
+                    <select name="supplier_id" class="form-control">
+                        
+                            @foreach($supplier as $data)
+                                <option value="{{$data->id}}">{{$data->nama_supplier}}</option>
+                            @endforeach
+                        
+                    </select>
+                </div>
+                <div class="form-group">
                     <label>Barang</label>
                     <select name="barang_id" class="form-control">
                         

@@ -15,24 +15,24 @@ class CreateBarangMasuksTable extends Migration
     {
         Schema::create('barang_masuks', function (Blueprint $table) {
             $table->id();
-            // $table->string('kode_barang_masuk');
-            // $table->date('tanggal_masuk');
-            // $table->biginteger('supplier_id')->unsigned();
-            //         //foreign
-            //         $table->foreign('supplier_id')
-            //         ->references('id')
-            //         ->on('suppliers');
-            // $table->biginteger('barang_id')->unsigned();
-            //         //foreign
-            //         $table->foreign('barang_id')
-            //         ->references('id')
-            //         ->on('barangs');
-            // $table->integer('qty');
-            // $table->biginteger('user_id')->unsigned();
-            //         //foreign
-            //         $table->foreign('user_id')
-            //         ->references('id')
-            //         ->on('users');
+            $table->string('kode_barang_masuk');
+            $table->date('tanggal_masuk');
+            $table->biginteger('supplier_id')->unsigned();
+                    //foreign
+                    $table->foreign('supplier_id')
+                    ->references('id')
+                    ->on('suppliers');
+            $table->biginteger('barang_id')->unsigned();
+                    //foreign
+                    $table->foreign('barang_id')
+                    ->references('id')
+                    ->on('barangs');
+            $table->integer('qty');
+            $table->biginteger('user_id')->unsigned();
+                    //foreign
+                    $table->foreign('user_id')
+                    ->references('id')
+                    ->on('users');
             $table->timestamps();
         });
     }
